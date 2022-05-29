@@ -1,0 +1,55 @@
+.color_fondo{
+    -fx-background-color: #181818;
+}
+
+.color_barra{
+    -fx-background-color: #121212;
+}
+
+.anyadir_playlist{
+    -fx-border-color: #A1A1A1;
+    -fx-border-width: 1 0 0 0;
+}
+
+.buscador{
+    -fx-background-color: #fff;
+    -fx-background-radius: 100;
+}
+
+.boton_premium{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-border-color: #9300d8;
+    -fx-border-radius: 50;
+}
+
+.anuncio_publicitario{
+    -fx-border-color: #9300d8;
+}
+
+.scroll-pane > .viewport{
+    -fx-background-color: #181818;
+}
+
+.selected:hover{
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: #9300d8;
+}
+
+.letra_selected:hover{
+    -fx-text-fill: #9300d8;
+}
+
+.selected_pago:hover{
+    -fx-border-width: 2 2 2 2;
+    -fx-border-color: #9300d8;
+}
+
+.artista{
+    -fx-background-color: #181818;
+    -fx-background-radius: 100;
+}
+
+.newPl{
+    -fx-border-width: 2 2 2 2;
+    -fx-border-color: #9300d8;
+}

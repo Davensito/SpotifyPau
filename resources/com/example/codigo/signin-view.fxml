@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="560.0" styleClass="color_fondo" stylesheets="@../../../css/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codigo.SigninController">
+   <children>
+      <VBox layoutX="38.0" layoutY="33.0" prefHeight="183.0" prefWidth="214.0" spacing="10.0">
+         <children>
+            <Label text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailTxtlb" styleClass="texto" stylesheets="@../../../css/login.css" />
+            <Label fx:id="emailMsg" prefHeight="9.0" prefWidth="214.0" text="Este email ya existe o no es válido." textFill="#181818" />
+            <Label prefHeight="17.0" prefWidth="214.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTxtlb" styleClass="texto" stylesheets="@../../../css/login.css" />
+            <Label fx:id="usuarioMsg" prefHeight="9.0" prefWidth="214.0" text="Este usuario ya existe o no es válido." textFill="#181818" />
+         </children>
+      </VBox>
+      <Button fx:id="registrerButt" layoutX="217.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#onRegistrerClick" prefHeight="46.0" prefWidth="98.0" styleClass="boton_login_singin" stylesheets="@../../../css/login.css" text="Registrer now" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <VBox layoutX="285.0" layoutY="33.0" prefHeight="312.0" prefWidth="245.0" spacing="10.0">
+         <children>
+            <Label text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="passwordTxtlb" styleClass="texto" stylesheets="@../../../css/login.css" />
+            <Label text="Birthday date" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" prefHeight="26.0" prefWidth="250.0" />
+            <Label text="Country" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="countryTxtlb" styleClass="texto" stylesheets="@../../../css/login.css" />
+            <Label text="Postal code" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cpTxtlb" styleClass="texto" stylesheets="@../../../css/login.css" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="39.0" layoutY="245.0" prefHeight="64.0" prefWidth="227.0" spacing="20.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="68.0" text="Gender" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Button fx:id="maleButt" mnemonicParsing="false" onMouseClicked="#onMaleButtClick" text="M" />
+                  <Button fx:id="femaleButt" mnemonicParsing="false" onMouseClicked="#onFemaleButtClick" prefHeight="26.0" prefWidth="28.0" text="F" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>

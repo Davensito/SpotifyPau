@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="271.0" spacing="15.0" styleClass="artista" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <ImageView fx:id="imgArtista" fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/Artistas/dualipa.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nomArtista"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="116.0" text="NOMBRE ARTISTA" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <ImageView fx:id="mgArtista" fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+         <image>
+            <Image url="@../../../img/mg.png" />
+         </image>
+      </ImageView>
+   </children>
+</HBox>

@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1310.0" styleClass="color_fondo" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codigo.SpotifyController">
+   <left>
+      <VBox prefHeight="646.0" prefWidth="186.0" styleClass="color_barra" stylesheets="@../../../css/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="53.0" prefWidth="244.0">
+               <children>
+                  <ImageView id="tresPuntitos" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_more.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="81.0" fitWidth="171.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@../../../img/logo2.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox prefHeight="193.0" prefWidth="214.0">
+               <children>
+                  <HBox fx:id="botonHome" alignment="CENTER_LEFT" onMouseClicked="#onHomeButtClick" prefHeight="0.0" prefWidth="244.0" spacing="20.0" styleClass="selected" stylesheets="@../../../css/style.css">
+                     <children>
+                        <Button id="casita" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/ic_home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label prefHeight="23.0" prefWidth="194.0" text="Home" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="151.0" spacing="20.0" styleClass="selected" stylesheets="@../../../css/style.css">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView id="explorar" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/brujula.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label prefHeight="23.0" prefWidth="194.0" text="Explore" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="14.0" prefWidth="244.0" spacing="20.0" styleClass="selected" stylesheets="@../../../css/style.css">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView id="radio" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/radio.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label prefHeight="23.0" prefWidth="194.0" text="Radio" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="161.0" prefWidth="244.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="116.0" text="YOUR LIBRARY" textAlignment="CENTER" textFill="#999292">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button id="paraTi" fx:id="botonRecentlyPlayed" mnemonicParsing="false" onMouseClicked="#onRecentlyPlayedClick" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Recently Played" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" fx:id="botonAlbum" mnemonicParsing="false" onMouseClicked="#onAlbumButtonClick" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Albums" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" fx:id="botonArtistas" mnemonicParsing="false" onMouseClicked="#onArtistasButtonClick" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Artists" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" fx:id="botonPodcasts" mnemonicParsing="false" onMouseClicked="#onPodcastButtonClick" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Podcasts" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="184.0" prefWidth="244.0">
+               <children>
+                  <Label fx:id="botonPlaylist" onMouseClicked="#onButtPlaylistClick" prefHeight="26.0" prefWidth="82.0" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="PLAYLISTS" textAlignment="CENTER" textFill="#999292">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Button id="paraTi" fx:id="botonYourPl" mnemonicParsing="false" onMouseClicked="#cargarVistaYourPl" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Your playlists" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" fx:id="botonPlPatrocinadas" mnemonicParsing="false" onMouseClicked="#cargarVistaPlaylistPatrocinadas" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Patrocinated Playlists" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox prefHeight="70.0" prefWidth="244.0" />
+            <HBox fx:id="botonCrearNuevaplaylist" alignment="CENTER_RIGHT" onMouseClicked="#crearNuevaPlaylist" prefHeight="22.0" prefWidth="244.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/añadir.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="23.0" prefWidth="194.0" stylesheets="@../../../css/style.css" text="New Playlist" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="anyadir_playlist" />
+                  <String fx:value="letra_selected" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children></VBox>
+   </left>
+   <center>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="1065.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="2.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="2.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_forward.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="215.0" styleClass="buscador" stylesheets="@../../../css/style.css">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField prefHeight="34.0" prefWidth="150.0" promptText="Search" style="-fx-background-color: transparent;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Pane fx:id="paneEresPremium" prefHeight="62.0" prefWidth="274.0" visible="false">
+                     <children>
+                        <Label layoutX="65.0" layoutY="17.0" prefHeight="28.0" prefWidth="105.0" text="ERES PREMIUM" textFill="#9300d8">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="40.0" fitWidth="48.0" layoutX="194.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/premium.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="470.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="buttPremium" mnemonicParsing="false" onMouseClicked="#onButtPremiumClick" prefHeight="27.0" prefWidth="148.0" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="PREMIUM" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="46.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/user2.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="usuarioActivo" prefHeight="46.0" prefWidth="82.0" text="UNDEFINIED" textFill="WHITE" />
+                        <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/settings.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" layoutX="231.0" layoutY="62.0" prefHeight="134.0" prefWidth="512.0">
+               <children>
+                  <ImageView fitHeight="133.0" fitWidth="731.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/anuncio.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="mainView" layoutY="201.0" prefHeight="422.0" prefWidth="1085.0">
+               <children>
+                  <TableView fx:id="tablaArtistasSeguidos" layoutX="14.0" layoutY="35.0" onMouseClicked="#getArtistaUnico2" prefHeight="372.0" prefWidth="486.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="nombreTablaArtistasSeguidos" prefWidth="243.19997864961624" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Name" />
+                      <TableColumn fx:id="imagenTablaArtistasSeguidos" prefWidth="239.2000274658203" style="-fx-background-color: #181818; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Image" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="7.0" prefHeight="30.0" prefWidth="194.0" text="Artists you follow" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="549.0" layoutY="9.0" prefHeight="23.0" prefWidth="194.0" text="Favourite songs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaCancionesFav" layoutX="549.0" layoutY="38.0" onMouseClicked="#consultaCancionesFav" prefHeight="366.0" prefWidth="494.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="tituloTablaCancionesFav" prefWidth="492.0000366210937" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Title" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaAlbumsGeneral" layoutY="201.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label layoutX="721.0" layoutY="68.0" prefHeight="27.0" prefWidth="134.0" text="Albums" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaAlbums" layoutX="62.0" layoutY="68.0" onMouseClicked="#albumUnicoClick" prefHeight="326.0" prefWidth="468.0" style="-fx-border-color: #9300d8; -fx-background-color: #181818;">
+                    <columns>
+                      <TableColumn fx:id="tituloAlbum" prefWidth="319.199951171875" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" text="Título" />
+                        <TableColumn fx:id="anyoAlbum" prefWidth="146.4000244140625" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" text="Año" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button id="paraTi" layoutX="728.0" layoutY="95.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="254.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Discover new albums" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaAlbumUnico" layoutY="201.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <TableView fx:id="tablaCancionesAlbumUnico" layoutX="555.0" layoutY="32.0" onMouseClicked="#consultaCancionesFav" prefHeight="362.0" prefWidth="460.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                     <columns>
+                        <TableColumn fx:id="columnaCancionesAlbumUnico" prefWidth="459.20001220703125" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" text="Canciones" />
+                     </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Label fx:id="labelAlbumUnico" layoutX="61.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="367.0" text="Nombre del Album" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaArtistaPropietarioAlbum" layoutX="37.0" layoutY="113.0" onMouseClicked="#getArtistaUnico3" prefHeight="152.0" prefWidth="450.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="columnaNombreArtistaPropietarioAlbum" prefWidth="241.5999755859375" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: WHITE;" text="Nombre Artista" />
+                      <TableColumn fx:id="columnaImgArtistaPropietarioAlbum" prefWidth="208.00006103515625" style="-fx-background-color: #181818; -fx-text-fill: white; -fx-alignment: CENTER;" text="Imagen" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaArtistasGeneral" layoutY="206.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label layoutX="111.0" layoutY="50.0" prefHeight="27.0" prefWidth="134.0" text="Artists" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button id="paraTi" layoutX="111.0" layoutY="77.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="254.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Discover new artists" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="tablaArtistasCompleta" layoutX="513.0" layoutY="50.0" onMouseClicked="#getArtistaUnico" prefHeight="358.0" prefWidth="505.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="nombreTablaArtistasCompleta" prefWidth="264.0" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Name" />
+                      <TableColumn fx:id="imagenTablaArtistasCompleta" prefWidth="240.79998779296875" style="-fx-background-color: #181818; -fx-alignment: CENTER;" styleClass="selected" text="Image" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="buscarArtistaUnico" layoutY="201.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <TableView fx:id="cancionesArtista" layoutX="557.0" layoutY="73.0" onMouseClicked="#consultaCancionesFav" prefHeight="329.0" prefWidth="488.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="tituloCancionesArtista" prefWidth="487.20001220703125" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Título" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <TableView fx:id="albumArtista" layoutX="43.0" layoutY="187.0" onMouseClicked="#albumUnicoClick2" prefHeight="200.0" prefWidth="368.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="tituloAlbumArtista" prefWidth="272.79998779296875" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Título" />
+                      <TableColumn fx:id="anyoAlbumArtista" prefWidth="95.20001220703125" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" text="Año" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Label layoutX="43.0" layoutY="150.0" prefHeight="23.0" prefWidth="194.0" text="Albums" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="557.0" layoutY="33.0" prefHeight="23.0" prefWidth="194.0" text="Canciones" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomArtistaUnico" layoutX="43.0" layoutY="33.0" prefHeight="27.0" prefWidth="154.0" text="Nombre Artista" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageArtistaUnico" fitHeight="129.0" fitWidth="167.0" layoutX="219.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/Artistas/dualipa.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="botonDejarSeguirArtista" layoutX="378.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#dejarSeguirArtista" prefHeight="45.0" prefWidth="136.0" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="UNFOLLOW" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/unfollow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonSeguirArtista" layoutX="378.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#seguirArtista" prefHeight="45.0" prefWidth="113.0" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="FOLLOW" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/follow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaRecentlyPlayed" layoutY="206.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="392.0" layoutY="24.0" prefHeight="23.0" prefWidth="194.0" text="RECENTLY PLAYED" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaRecentlyPlayed" layoutX="232.0" layoutY="75.0" onMouseClicked="#consultaCancionesFav" prefHeight="301.0" prefWidth="510.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="cancionesRecentlyPlayed" prefWidth="509.6000122070312" style="-fx-background-color: #9300d8;" styleClass="selected" text="Songs you have recently played" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaYourPl" layoutY="201.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="405.0" layoutY="18.0" prefHeight="23.0" prefWidth="194.0" text="PLAYLISTS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="562.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_playlist.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tablaPlaylistsCreadas" layoutX="36.0" layoutY="71.0" prefHeight="242.0" prefWidth="374.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;" stylesheets="@../../../css/style.css">
+                    <columns>
+                      <TableColumn fx:id="nombrePlCreada" prefWidth="370.3999938964844" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Nombre" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <TableView fx:id="tablaPlaylistsSeguidas" layoutX="653.0" layoutY="71.0" prefHeight="242.0" prefWidth="374.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;" stylesheets="@../../../css/style.css">
+                    <columns>
+                      <TableColumn fx:id="nombrePlSeguida" prefWidth="372.0000366210937" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Nombre" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button id="paraTi" layoutX="36.0" layoutY="32.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="212.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="PLAYLISTS CREADAS POR TI" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" layoutX="652.0" layoutY="32.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="188.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="PLAYLISTS QUE SIGUES" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonEliminarPlCreadas" layoutX="284.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#eliminarPlCreada" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="ELIMINAR" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonDejarSeguirPl" layoutX="892.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#dejarSeguirPl" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="DEJAR DE SEGUIR" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonVerPlaylistUnicaCreada" layoutX="117.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#vistaPlaylistUnicaCreada" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="VER PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonVerPlaylistUnicaSeguida" layoutX="724.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#vistaPlaylistUnicaSeguida" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="VER PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaPlaylistUnica" layoutY="204.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label layoutX="204.0" layoutY="61.0" prefHeight="27.0" prefWidth="78.0" text="Playlist" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="41.0" fitWidth="63.0" layoutX="321.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_playlist.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nombrePlaylistUnica" layoutX="163.0" layoutY="128.0" prefHeight="82.0" prefWidth="239.0" text="Nombre de la playlist" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaCancionesPlaylistUnica" layoutX="555.0" layoutY="32.0" onMouseClicked="#consultaCancionesFav" prefHeight="362.0" prefWidth="460.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="cancionesPlaylistUnica" prefWidth="459.20001220703125" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Canciones" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button fx:id="botonSeguirPlaylist" layoutX="163.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#seguirPl" prefHeight="53.0" prefWidth="230.0" stylesheets="@../../../css/style.css" text="FOLLOW PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/follow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="boton_premium" />
+                        <String fx:value="letra_selected" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaPlaylistsGeneral" layoutY="204.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="395.0" layoutY="28.0" prefHeight="23.0" prefWidth="194.0" text="Playlists" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="66.0" layoutX="536.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_playlist.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tablaTodasPlaylists" layoutX="82.0" layoutY="100.0" prefHeight="284.0" prefWidth="316.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="titutloTodasPl" prefWidth="313.6000061035156" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Titulo" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button id="paraTi" alignment="TOP_LEFT" layoutX="82.0" layoutY="55.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="186.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="TODAS LAS PLAYLISTS" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" alignment="TOP_LEFT" layoutX="623.0" layoutY="55.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="186.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="PLAYLISTS ELIMINADAS" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="tablaPlEliminadas" layoutX="632.0" layoutY="100.0" prefHeight="284.0" prefWidth="316.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                     <columns>
+                        <TableColumn fx:id="tituloPlEliminadas" prefWidth="313.60003662109375" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Titulo" />
+                     </columns>
+                  </TableView>
+                  <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="809.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/basura.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="botonVerPlaylistUnicaGeneral" layoutX="461.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#vistaPlaylistUnicaGeneral" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="VER PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaCrearPlaylist" layoutY="196.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="387.0" layoutY="27.0" prefHeight="65.0" prefWidth="194.0" styleClass="newPl" stylesheets="@../../../css/style.css" text="NEW PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="299.0" layoutY="140.0" prefHeight="27.0" prefWidth="214.0" text="Title of the new Playlist:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tituloNuevaPl" layoutX="387.0" layoutY="186.0" prefHeight="26.0" prefWidth="204.0" styleClass="buscador" stylesheets="@../../../css/style.css" />
+                  <Button fx:id="botonCrearNuevaPl" layoutX="458.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#insertarNuevaPl" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="CREATE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaPlaylistsPatrocinadas" layoutY="196.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label layoutX="394.0" layoutY="27.0" prefHeight="27.0" prefWidth="238.0" text="PLAYLISTS PATROCINADAS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="verPlPatrocined" layoutX="780.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#vistaPlaylistUnicaPatrocinada" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="VER PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="tablaPlPatrocinadas" layoutX="348.0" layoutY="88.0" prefHeight="302.0" prefWidth="331.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="tituloPlPatrocinadas" prefWidth="330.20001220703125" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Patrocinated Playlists" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaPodcasts" layoutY="196.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="408.0" layoutY="33.0" prefHeight="23.0" prefWidth="194.0" text="PODCASTS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaTodosPodcasts" layoutX="45.0" layoutY="91.0" onMouseClicked="#getCapitulosAllPodcast" prefHeight="291.0" prefWidth="356.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="tituloTodosPodcasts" prefWidth="258.39996337890625" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Título" />
+                        <TableColumn fx:id="anyoPodcastTodos" prefWidth="95.20001220703125" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Año" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button id="paraTi" alignment="TOP_LEFT" layoutX="46.0" layoutY="46.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="All Podcasts" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="paraTi" alignment="TOP_LEFT" layoutX="602.0" layoutY="46.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: transparent;" styleClass="letra_selected" stylesheets="@../../../css/style.css" text="Podcasts You Follow" textFill="#4b4949">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="tablaPodcastsSeguidos" layoutX="602.0" layoutY="91.0" onMouseClicked="#getCapitulosFollowedPodcast" prefHeight="291.0" prefWidth="356.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                     <columns>
+                        <TableColumn fx:id="tituloPodcastsSeguidos" prefWidth="267.20001220703125" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Título" />
+                        <TableColumn fx:id="anyoPodcastSeguido" prefWidth="85.5999755859375" style="-fx-background-color: #9300d8; -fx-text-fill: white; -fx-alignment: CENTER;" styleClass="selected" text="Año" />
+                     </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="vistaPodcastUnico" layoutY="204.0" prefHeight="422.0" prefWidth="1085.0" visible="false">
+               <children>
+                  <Label fx:id="labelTituloPodcast" layoutX="94.0" layoutY="120.0" prefHeight="27.0" prefWidth="189.0" text="Titulo del podcast" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaPodcastUnico" layoutX="381.0" layoutY="46.0" onMouseClicked="#reproducirCapituloPodcast" prefHeight="344.0" prefWidth="578.0" style="-fx-background-color: #181818; -fx-border-color: #9300d8;">
+                    <columns>
+                      <TableColumn fx:id="capitulosPodcastUnico" prefWidth="438.39996337890625" style="-fx-background-color: #9300d8; -fx-alignment: CENTER; -fx-text-fill: white;" styleClass="selected" text="Capitulos" />
+                      <TableColumn fx:id="duracionPodcastUnico" prefWidth="139.2000732421875" style="-fx-alignment: CENTER; -fx-text-fill: white; -fx-background-color: #9300d8;" styleClass="selected" text="Duración" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button fx:id="botonFollowPodcast" layoutX="47.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#seguirPodcast" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="FOLLOW" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/follow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonUnfollowPodcast" layoutX="189.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#dejarSeguirPodcast" prefHeight="30.0" prefWidth="125.0" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="UNFOLLOW" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/unfollow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="hBoxCancionInferior" alignment="CENTER" prefHeight="57.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="gifMusicaActiva" fitHeight="42.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ezgif.com-gif-maker.gif" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="171.0">
+                     <children>
+                        <Label fx:id="tituloCancionInferior" prefHeight="23.0" prefWidth="194.0" text="Canción de prueba" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button id="paraTi" fx:id="nombreArtistaInferior" alignment="TOP_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: transparent;" text="Por pruebas" textFill="#4b4949">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="convertirCancionFav" fitHeight="37.0" fitWidth="56.0" onMouseClicked="#convertirCancionFav" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/mg.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </HBox>
+            <VBox fx:id="botonAnyadirCancionAPlaylist" alignment="TOP_CENTER" onMouseClicked="#anyadirCancionAPl" prefHeight="77.0" prefWidth="138.0" styleClass="boton_premium" stylesheets="@../../../css/style.css">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="78.0" text="AÑADIR " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="27.0" prefWidth="99.0" text="A PLAYLIST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="115.0" prefWidth="756.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="82.0" prefWidth="737.0" spacing="30.0">
+                     <children>
+                        <ImageView fitHeight="37.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_shuffle.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="37.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_skip_to_start.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane prefHeight="9.0" prefWidth="48.0">
+                           <children>
+                              <ImageView fx:id="botonPlay" fitHeight="37.0" fitWidth="40.0" layoutX="9.0" layoutY="7.0" onMouseClicked="#playPauseButtonCLick" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/play1.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="botonPausa" fitHeight="37.0" fitWidth="40.0" layoutX="9.0" layoutY="7.0" onMouseClicked="#playPauseButtonCLick" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/pause.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </AnchorPane>
+                        <ImageView fitHeight="37.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_end.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="37.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_repeat.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label text="00:00" textFill="#fafafa" />
+                        <Slider prefHeight="14.0" prefWidth="686.0" />
+                        <Label text="03:00" textFill="#fafafa" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="57.0" prefWidth="91.0">
+               <children>
+                  <ImageView fitHeight="37.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_volume.png" />
+                     </image>
+                  </ImageView>
+                  <Slider orientation="VERTICAL" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" top="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>

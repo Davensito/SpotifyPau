@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="687.0" styleClass="color_fondo" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codigo.TarjetaController">
+   <children>
+      <VBox alignment="CENTER" layoutX="415.0" layoutY="86.0" prefHeight="349.0" prefWidth="226.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="217.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="206.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="19.0" prefWidth="117.0" text="Credit card owner" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="duenyoTarjeta" prefHeight="26.0" prefWidth="210.0">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="98.0" prefWidth="284.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="98.0" prefWidth="318.0" spacing="5.0">
+                     <children>
+                        <Label text="Surname" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="apellidoDuenyo">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="287.0" spacing="5.0">
+               <children>
+                  <Label text="Second Surname" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="segundoApellidoDuenyo">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="51.0" layoutY="86.0" prefHeight="349.0" prefWidth="226.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="206.0" spacing="5.0">
+               <children>
+                  <Label text="Credit card number" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numTarjeta" prefHeight="26.0" prefWidth="210.0">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label fx:id="labelErrorTarjeta" alignment="CENTER" prefHeight="18.0" prefWidth="209.0" text="Must have 16 characters" textFill="#181818" />
+               </children>
+            </VBox>
+            <HBox prefHeight="98.0" prefWidth="284.0" spacing="10.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="287.0" spacing="5.0">
+                     <children>
+                        <Label text="Month" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mesCaducidad" promptText="mm">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="209.0" text="Only 4 charac" textFill="#181818" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="98.0" prefWidth="318.0" spacing="5.0">
+                     <children>
+                        <Label text="Year" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="anyoCaducidad" promptText="YYYY">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <Label fx:id="labelErrorAnyo" alignment="CENTER" prefHeight="18.0" prefWidth="209.0" text="Only 4 charac" textFill="#181818" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="206.0" spacing="5.0">
+               <children>
+                  <Label text="CVV" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="codigoSeguridad" prefHeight="26.0" prefWidth="210.0">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label fx:id="labelErrorCVV" alignment="CENTER" prefHeight="18.0" prefWidth="209.0" text="Must have 3 characters" textFill="#181818" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </VBox>
+      <ImageView fitHeight="58.0" fitWidth="102.0" layoutX="426.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/tarjeta.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="233.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/logo2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="makePaymentButt" layoutX="284.0" layoutY="435.0" mnemonicParsing="false" onMouseClicked="#onMakePaymentButtClick" prefHeight="43.0" prefWidth="119.0" styleClass="boton_premium" stylesheets="@../../../css/style.css" text="MAKE PAYMENT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="backButt" layoutX="51.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onBackButtClick" prefHeight="34.0" prefWidth="42.0" styleClass="boton_premium" stylesheets="@../../../css/premium.css">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/ic_back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</Pane>

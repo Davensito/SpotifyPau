@@ -1,0 +1,14 @@
+.color_fondo{
+    -fx-background-color: #181818;
+}
+
+.texto{
+    -fx-background-color: #fff;
+    -fx-background-radius: 100;
+}
+
+.boton_login_singin{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-border-color: #9300d8;
+    -fx-border-radius: 50;
+}

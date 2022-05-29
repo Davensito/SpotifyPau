@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="345.0" styleClass="color_fondo" stylesheets="@../../../css/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codigo.LoginController">
+   <children>
+      <Pane layoutX="-2.0" layoutY="-5.0" prefHeight="475.0" prefWidth="216.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="80.0" layoutY="127.0" prefHeight="39.0" prefWidth="142.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTxtfl" layoutX="77.0" layoutY="166.0" styleClass="texto" stylesheets="@../../../css/login.css" />
+            <Label layoutX="80.0" layoutY="209.0" prefHeight="39.0" prefWidth="142.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="loginButt" layoutX="143.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#onLoginClick" prefHeight="31.0" prefWidth="75.0" styleClass="boton_login_singin" stylesheets="@../../../css/login.css" text="Log In" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="101.0" layoutY="363.0" prefHeight="39.0" prefWidth="157.0" text="Are you new here?" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="signingButt" layoutX="143.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onSigninClick" prefHeight="31.0" prefWidth="75.0" styleClass="boton_login_singin" stylesheets="@../../../css/login.css" text="Sign In" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="errorMsg" layoutX="80.0" layoutY="285.0" prefHeight="17.0" prefWidth="200.0" text="Username or password not valid" textFill="#181818" />
+            <PasswordField fx:id="passwordTxtfl" layoutX="77.0" layoutY="248.0" styleClass="texto" stylesheets="@../../../css/login.css" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
